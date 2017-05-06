@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerDetailViewController" customModule="Fractal" customModuleProvider="target">
+            <connections>
+                <outlet property="beerDescription" destination="rzM-Zh-KR1" id="497-Tb-qgv"/>
+                <outlet property="description" destination="rzM-Zh-KR1" id="WF1-zL-Y5M"/>
+                <outlet property="favoriteIcon" destination="Imx-NX-dte" id="cit-wm-YNy"/>
+                <outlet property="name" destination="Om0-Ee-mDG" id="lZ6-Y7-YKE"/>
+                <outlet property="tagline" destination="PPr-jZ-RLc" id="UUX-WX-qfB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Imx-NX-dte">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="00z-5W-MoM"/>
+                        <constraint firstAttribute="width" constant="100" id="GLD-LC-svR"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om0-Ee-mDG">
+                    <rect key="frame" x="115" y="35" width="244" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPr-jZ-RLc">
+                    <rect key="frame" x="115" y="72" width="244" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzM-Zh-KR1">
+                    <rect key="frame" x="16" y="133" width="343" height="534"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Om0-Ee-mDG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="05k-31-mbD"/>
+                <constraint firstItem="Imx-NX-dte" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8fa-XL-3lw"/>
+                <constraint firstItem="rzM-Zh-KR1" firstAttribute="top" secondItem="Imx-NX-dte" secondAttribute="bottom" constant="8" id="HGc-xk-fzb"/>
+                <constraint firstItem="PPr-jZ-RLc" firstAttribute="width" secondItem="Om0-Ee-mDG" secondAttribute="width" id="HyD-Q0-4T5"/>
+                <constraint firstAttribute="bottom" secondItem="rzM-Zh-KR1" secondAttribute="bottom" id="NaJ-3a-eTS"/>
+                <constraint firstItem="PPr-jZ-RLc" firstAttribute="leading" secondItem="Om0-Ee-mDG" secondAttribute="leading" id="Osq-3s-8KN"/>
+                <constraint firstItem="PPr-jZ-RLc" firstAttribute="top" secondItem="Om0-Ee-mDG" secondAttribute="bottom" constant="14" id="SJR-ob-Ok7"/>
+                <constraint firstItem="Om0-Ee-mDG" firstAttribute="leading" secondItem="Imx-NX-dte" secondAttribute="trailing" constant="15" id="Z4U-3c-a2j"/>
+                <constraint firstItem="rzM-Zh-KR1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="bRF-ce-fGQ"/>
+                <constraint firstAttribute="trailing" secondItem="Om0-Ee-mDG" secondAttribute="trailing" constant="16" id="hkj-du-cPy"/>
+                <constraint firstAttribute="trailing" secondItem="rzM-Zh-KR1" secondAttribute="trailing" constant="16" id="oRi-la-TfO"/>
+                <constraint firstItem="Imx-NX-dte" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wWc-K2-NSA"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

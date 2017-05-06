@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9174DF251EBD53F300B9D512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF241EBD53F300B9D512 /* AppDelegate.swift */; };
-		9174DF271EBD53F300B9D512 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF261EBD53F300B9D512 /* ViewController.swift */; };
-		9174DF2A1EBD53F300B9D512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF281EBD53F300B9D512 /* Main.storyboard */; };
 		9174DF2C1EBD53F300B9D512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF2B1EBD53F300B9D512 /* Assets.xcassets */; };
 		9174DF2F1EBD53F300B9D512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF2D1EBD53F300B9D512 /* LaunchScreen.storyboard */; };
 		9174DF3A1EBD53F300B9D512 /* FractalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF391EBD53F300B9D512 /* FractalTests.swift */; };
 		9174DF451EBD53F300B9D512 /* FractalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF441EBD53F300B9D512 /* FractalUITests.swift */; };
+		9174DF551EBD58F800B9D512 /* BeerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF541EBD58F800B9D512 /* BeerDetail.xib */; };
+		9174DF5C1EBD5F2C00B9D512 /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF5B1EBD5F2C00B9D512 /* BeerDetailViewController.swift */; };
+		9174DF5F1EBD602000B9D512 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DF5D1EBD602000B9D512 /* BeerListViewController.swift */; };
+		9174DF601EBD602000B9D512 /* BeersList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF5E1EBD602000B9D512 /* BeersList.xib */; };
+		9174DF621EBD664900B9D512 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9174DF611EBD664900B9D512 /* BeerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,6 @@
 /* Begin PBXFileReference section */
 		9174DF211EBD53F300B9D512 /* Fractal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9174DF241EBD53F300B9D512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9174DF261EBD53F300B9D512 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9174DF291EBD53F300B9D512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9174DF2B1EBD53F300B9D512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9174DF2E1EBD53F300B9D512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9174DF301EBD53F300B9D512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,11 @@
 		9174DF401EBD53F300B9D512 /* FractalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9174DF441EBD53F300B9D512 /* FractalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalUITests.swift; sourceTree = "<group>"; };
 		9174DF461EBD53F300B9D512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9174DF541EBD58F800B9D512 /* BeerDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeerDetail.xib; sourceTree = "<group>"; };
+		9174DF5B1EBD5F2C00B9D512 /* BeerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
+		9174DF5D1EBD602000B9D512 /* BeerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
+		9174DF5E1EBD602000B9D512 /* BeersList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeersList.xib; sourceTree = "<group>"; };
+		9174DF611EBD664900B9D512 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,9 @@
 		9174DF231EBD53F300B9D512 /* Fractal */ = {
 			isa = PBXGroup;
 			children = (
-				9174DF241EBD53F300B9D512 /* AppDelegate.swift */,
-				9174DF261EBD53F300B9D512 /* ViewController.swift */,
-				9174DF281EBD53F300B9D512 /* Main.storyboard */,
-				9174DF2B1EBD53F300B9D512 /* Assets.xcassets */,
-				9174DF2D1EBD53F300B9D512 /* LaunchScreen.storyboard */,
-				9174DF301EBD53F300B9D512 /* Info.plist */,
+				9174DF561EBD5EB100B9D512 /* View Controllers */,
+				9174DF531EBD548400B9D512 /* Views */,
+				9174DF521EBD547A00B9D512 /* Base */,
 			);
 			path = Fractal;
 			sourceTree = "<group>";
@@ -123,6 +126,36 @@
 				9174DF461EBD53F300B9D512 /* Info.plist */,
 			);
 			path = FractalUITests;
+			sourceTree = "<group>";
+		};
+		9174DF521EBD547A00B9D512 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9174DF241EBD53F300B9D512 /* AppDelegate.swift */,
+				9174DF2B1EBD53F300B9D512 /* Assets.xcassets */,
+				9174DF301EBD53F300B9D512 /* Info.plist */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9174DF531EBD548400B9D512 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9174DF2D1EBD53F300B9D512 /* LaunchScreen.storyboard */,
+				9174DF541EBD58F800B9D512 /* BeerDetail.xib */,
+				9174DF5E1EBD602000B9D512 /* BeersList.xib */,
+				9174DF611EBD664900B9D512 /* BeerTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9174DF561EBD5EB100B9D512 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9174DF5B1EBD5F2C00B9D512 /* BeerDetailViewController.swift */,
+				9174DF5D1EBD602000B9D512 /* BeerListViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9174DF601EBD602000B9D512 /* BeersList.xib in Resources */,
+				9174DF621EBD664900B9D512 /* BeerTableViewCell.xib in Resources */,
 				9174DF2F1EBD53F300B9D512 /* LaunchScreen.storyboard in Resources */,
+				9174DF551EBD58F800B9D512 /* BeerDetail.xib in Resources */,
 				9174DF2C1EBD53F300B9D512 /* Assets.xcassets in Resources */,
-				9174DF2A1EBD53F300B9D512 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9174DF271EBD53F300B9D512 /* ViewController.swift in Sources */,
+				9174DF5F1EBD602000B9D512 /* BeerListViewController.swift in Sources */,
 				9174DF251EBD53F300B9D512 /* AppDelegate.swift in Sources */,
+				9174DF5C1EBD5F2C00B9D512 /* BeerDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +335,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9174DF281EBD53F300B9D512 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9174DF291EBD53F300B9D512 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9174DF2D1EBD53F300B9D512 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

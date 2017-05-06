@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BeerCell" rowHeight="70" id="ya3-xW-Au8">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ya3-xW-Au8" id="PSh-WZ-TqX">
+                <rect key="frame" x="0.0" y="0.0" width="342" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Favorite" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-mA-fLv">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="MTT-PE-vJx"/>
+                            <constraint firstAttribute="width" constant="60" id="Zv8-Mh-TU7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Of-TCv">
+                        <rect key="frame" x="77" y="15" width="257" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgT-qC-uUA">
+                        <rect key="frame" x="77" y="37" width="257" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.60386919975280762" green="0.60395634174346924" blue="0.60384166240692139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="pgT-qC-uUA" firstAttribute="top" secondItem="D1n-Of-TCv" secondAttribute="bottom" constant="1" id="BJq-Zr-k2r"/>
+                    <constraint firstItem="D1n-Of-TCv" firstAttribute="leading" secondItem="fRC-mA-fLv" secondAttribute="trailing" constant="17" id="KJL-Vz-Xb3"/>
+                    <constraint firstItem="fRC-mA-fLv" firstAttribute="top" secondItem="PSh-WZ-TqX" secondAttribute="top" id="MzL-tI-nMi"/>
+                    <constraint firstItem="fRC-mA-fLv" firstAttribute="leading" secondItem="PSh-WZ-TqX" secondAttribute="leading" id="PVG-wK-esB"/>
+                    <constraint firstItem="pgT-qC-uUA" firstAttribute="leading" secondItem="D1n-Of-TCv" secondAttribute="leading" id="QYx-Df-O2s"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="D1n-Of-TCv" secondAttribute="trailing" id="Tz1-Wg-qmB"/>
+                    <constraint firstItem="pgT-qC-uUA" firstAttribute="width" secondItem="D1n-Of-TCv" secondAttribute="width" id="etr-cI-eYF"/>
+                    <constraint firstItem="D1n-Of-TCv" firstAttribute="top" secondItem="PSh-WZ-TqX" secondAttribute="topMargin" constant="7" id="qzX-7f-yrF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-24.5" y="-67"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Favorite" width="408" height="496"/>
+    </resources>
+</document>
