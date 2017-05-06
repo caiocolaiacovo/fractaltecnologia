@@ -11,8 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerDetailViewController" customModule="Fractal" customModuleProvider="target">
             <connections>
                 <outlet property="beerDescription" destination="rzM-Zh-KR1" id="497-Tb-qgv"/>
+                <outlet property="beerImage" destination="Imx-NX-dte" id="htp-wr-3fT"/>
                 <outlet property="description" destination="rzM-Zh-KR1" id="WF1-zL-Y5M"/>
-                <outlet property="favoriteIcon" destination="Imx-NX-dte" id="cit-wm-YNy"/>
                 <outlet property="name" destination="Om0-Ee-mDG" id="lZ6-Y7-YKE"/>
                 <outlet property="tagline" destination="PPr-jZ-RLc" id="UUX-WX-qfB"/>
             </connections>

@@ -10,7 +10,7 @@ import UIKit
 
 class BeerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
     

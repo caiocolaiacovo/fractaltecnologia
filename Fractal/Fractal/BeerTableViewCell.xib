@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerTableViewCell" customModule="Fractal" customModuleProvider="target">
             <connections>
-                <outlet property="icon" destination="fRC-mA-fLv" id="Gwb-U4-8KJ"/>
+                <outlet property="beerImage" destination="fRC-mA-fLv" id="M8K-eu-PaR"/>
                 <outlet property="name" destination="D1n-Of-TCv" id="9ia-r5-hcf"/>
                 <outlet property="tagline" destination="pgT-qC-uUA" id="pPL-Oj-jsh"/>
             </connections>

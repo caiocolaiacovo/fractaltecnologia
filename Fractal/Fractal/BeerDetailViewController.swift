@@ -10,7 +10,7 @@ import UIKit
 
 class BeerDetailViewController: UIViewController {
 
-    @IBOutlet weak var favoriteIcon: UIImageView!
+    @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
     @IBOutlet weak var beerDescription: UILabel!
