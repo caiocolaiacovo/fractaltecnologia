@@ -15,5 +15,9 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var tagline: UILabel!
     @IBOutlet weak var beerDescription: UILabel!
     
-
+    func makeFavorite() {
+        let beerDetailInputPresenterApp = BeerDetailInputPresenterApp()
+        
+        beerDetailInputPresenterApp.makeBeerFavorite()
+    }
 }
