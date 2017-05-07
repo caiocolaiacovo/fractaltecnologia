@@ -12,16 +12,21 @@ class ListBeersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    let listBeers = ListBeersDataSource()
+    var listBeersDataSource: ListBeersDataSource?
     
     // MARK: View
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listBeersDataSource = ListBeersDataSource()
+        let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.dataSource = listBeers
+        tableView.delegate = listBeersDataSource
+        tableView.dataSource = listBeersDataSource
         tableView.reloadData()
     }
 }

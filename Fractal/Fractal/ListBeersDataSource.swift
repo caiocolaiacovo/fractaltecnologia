@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class ListBeersDataSource: NSObject, UITableViewDataSource {
-    var beers: [Beer]!
+class ListBeersDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+    var beers: [BeerItem]!
     
     override init() {
         super.init()
@@ -23,7 +23,7 @@ class ListBeersDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("BeerTableViewCell", owner: self, options: nil)?.first as! BeerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as! BeerTableViewCell
         
         cell.name.text = beers[indexPath.row].name
         cell.tagline.text = beers[indexPath.row].tagline
@@ -31,17 +31,25 @@ class ListBeersDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt")
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0) //#F4F4F4
+    }
+    
     //Will be replaced when repository is ready.
     private func setData() {
-        var beer1 = Beer()
+        var beer1 = BeerItem()
         beer1.name = "Beer 1"
         beer1.tagline = "this is a tagline for beer 1"
         
-        var beer2 = Beer()
+        var beer2 = BeerItem()
         beer2.name = "Beer 2"
         beer2.tagline = "this is a tagline for beer 2"
         
-        var beer3 = Beer()
+        var beer3 = BeerItem()
         beer3.name = "Beer 3"
         beer3.tagline = "this is a tagline for beer 3"
         
@@ -49,7 +57,7 @@ class ListBeersDataSource: NSObject, UITableViewDataSource {
     }
 }
 
-struct Beer {
+struct BeerItem {
     var name: String?
     var tagline: String?
 }
