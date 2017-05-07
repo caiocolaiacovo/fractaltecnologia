@@ -11,12 +11,17 @@ import UIKit
 class ListBeersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    let listBeers = ListBeersDataSource()
     
     // MARK: View
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = ListBeersDataSource()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.dataSource = listBeers
+        tableView.reloadData()
     }
 }

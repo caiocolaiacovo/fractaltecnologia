@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListBeersViewController" customModule="Fractal" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="6We-Yp-h8f" id="AfJ-Vx-yjO"/>
+                <outlet property="tableView" destination="2bW-9T-W9j" id="aSq-VG-9RE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +19,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6We-Yp-h8f">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-ny-LyL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.placeholderLabel.textColor">
+                            <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="searchField.leftView.tintColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-9T-W9j">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="6We-Yp-h8f" secondAttribute="trailing" id="5xl-4k-JUT"/>
-                <constraint firstAttribute="bottom" secondItem="6We-Yp-h8f" secondAttribute="bottom" id="9ro-nl-Tjv"/>
-                <constraint firstItem="6We-Yp-h8f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aad-rB-TYh"/>
-                <constraint firstItem="6We-Yp-h8f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cEl-hJ-TEf"/>
+                <constraint firstAttribute="trailing" secondItem="2bW-9T-W9j" secondAttribute="trailing" id="A6U-ss-DN3"/>
+                <constraint firstAttribute="bottom" secondItem="2bW-9T-W9j" secondAttribute="bottom" id="DaM-ng-w4X"/>
+                <constraint firstItem="2bW-9T-W9j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Erc-99-7A0"/>
+                <constraint firstAttribute="trailing" secondItem="ytb-ny-LyL" secondAttribute="trailing" id="QUU-Ko-lqf"/>
+                <constraint firstItem="2bW-9T-W9j" firstAttribute="top" secondItem="ytb-ny-LyL" secondAttribute="bottom" id="Vv3-vC-oLM"/>
+                <constraint firstItem="ytb-ny-LyL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ljR-YW-O9T"/>
+                <constraint firstItem="ytb-ny-LyL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v4C-bG-jzB"/>
             </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
 </document>

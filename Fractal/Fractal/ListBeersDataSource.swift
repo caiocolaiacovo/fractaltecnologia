@@ -9,41 +9,47 @@
 import Foundation
 import UIKit
 
-struct Beer {
-    var name: String?
-    var tagline: String?
-}
-
 class ListBeersDataSource: NSObject, UITableViewDataSource {
-    var beers: [Beer]?
+    var beers: [Beer]!
     
     override init() {
         super.init()
         
-        var beer1 = Beer()
-        beer1.name = "Beer 1"
-        beer1.tagline = "this is a tagline"
-        
-        var beer2 = Beer()
-        beer2.name = "Beer 1"
-        beer2.tagline = "this is a tagline"
-        
-        var beer3 = Beer()
-        beer3.name = "Beer 1"
-        beer3.tagline = "this is a tagline"
-        
-        beers = [beer1, beer2, beer3]
+        setData()
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return beers.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BeerCell", for: indexPath) as! BeerTableViewCell
-        cell.name.text = beers?[indexPath.row].name
-        cell.tagline.text = beers?[indexPath.row].tagline
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("BeerTableViewCell", owner: self, options: nil)?.first as! BeerTableViewCell
+        
+        cell.name.text = beers[indexPath.row].name
+        cell.tagline.text = beers[indexPath.row].tagline
         
         return cell
     }
+    
+    //Will be replaced when repository is ready.
+    private func setData() {
+        var beer1 = Beer()
+        beer1.name = "Beer 1"
+        beer1.tagline = "this is a tagline for beer 1"
+        
+        var beer2 = Beer()
+        beer2.name = "Beer 2"
+        beer2.tagline = "this is a tagline for beer 2"
+        
+        var beer3 = Beer()
+        beer3.name = "Beer 3"
+        beer3.tagline = "this is a tagline for beer 3"
+        
+        beers = [beer1, beer2, beer3]
+    }
+}
+
+struct Beer {
+    var name: String?
+    var tagline: String?
 }
