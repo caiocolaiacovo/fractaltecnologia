@@ -1,5 +1,5 @@
 //
-//  BeerDetailInputPresenterApp.swift
+//  BeerDetailInputPresenter.swift
 //  Fractal
 //
 //  Created by Caio Colaiacovo on 06/05/17.
@@ -8,9 +8,15 @@
 
 import Foundation
 
-class BeerDetailInputPresenterApp {
+class BeerDetailInputPresenter {
     
-    func makeBeerFavorite() {
-        
+    private(set) var beerId: Int?
+    
+    init(to beerId: Int) {
+        self.beerId = beerId
+    }
+    
+    func openFavoriteAction() {
+        print("open favorite action for id \(String(describing: beerId))")
     }
 }
