@@ -21,7 +21,9 @@ class ListBeersViewController: UIViewController {
         
         listBeersDataSource = ListBeersDataSource()
         let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        
         tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {

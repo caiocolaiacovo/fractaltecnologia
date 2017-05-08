@@ -12,9 +12,9 @@
             <connections>
                 <outlet property="beerDescription" destination="rzM-Zh-KR1" id="497-Tb-qgv"/>
                 <outlet property="beerImage" destination="Imx-NX-dte" id="htp-wr-3fT"/>
-                <outlet property="description" destination="rzM-Zh-KR1" id="WF1-zL-Y5M"/>
                 <outlet property="name" destination="Om0-Ee-mDG" id="lZ6-Y7-YKE"/>
                 <outlet property="tagline" destination="PPr-jZ-RLc" id="UUX-WX-qfB"/>
+                <outlet property="view" destination="iN0-l3-epB" id="PeD-vY-Ts4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

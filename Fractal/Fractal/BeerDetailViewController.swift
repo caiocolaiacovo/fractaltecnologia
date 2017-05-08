@@ -10,14 +10,15 @@ import UIKit
 
 class BeerDetailViewController: UIViewController {
 
+    var id: Int!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
     @IBOutlet weak var beerDescription: UILabel!
     
-    func makeFavorite() {
-        let beerDetailInputPresenterApp = BeerDetailInputPresenterApp()
+    func didOpenFavoriteAction() {
+        let beerDetailInputPresenter = BeerDetailInputPresenter(to: id)
         
-        beerDetailInputPresenterApp.makeBeerFavorite()
+        beerDetailInputPresenter.openFavoriteAction()
     }
 }
