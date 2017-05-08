@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-class ListBeersDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class ListBeersDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, DataSourceProtocol {
     var beers: [BeerItem]!
+    var beerRouter: BeerRouter?
     
     override init() {
         super.init()
+        beerRouter = BeerRouter.sharedInstance
         
-        setData()
+        ListBeersInteractor(to: self).listAll()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,39 +27,32 @@ class ListBeersDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as! BeerTableViewCell
         
+        cell.id = beers[indexPath.row].id
         cell.name.text = beers[indexPath.row].name
         cell.tagline.text = beers[indexPath.row].tagline
+        cell.beerImage.image = beers[indexPath.row].beerImage
         
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAt")
+        let beer = beers[indexPath.row]
+        
+        beerRouter?.details(of: beer.id!)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0) //#F4F4F4
     }
     
-    //Will be replaced when repository is ready.
-    private func setData() {
-        var beer1 = BeerItem()
-        beer1.name = "Beer 1"
-        beer1.tagline = "this is a tagline for beer 1"
-        
-        var beer2 = BeerItem()
-        beer2.name = "Beer 2"
-        beer2.tagline = "this is a tagline for beer 2"
-        
-        var beer3 = BeerItem()
-        beer3.name = "Beer 3"
-        beer3.tagline = "this is a tagline for beer 3"
-        
-        beers = [beer1, beer2, beer3]
+    func listAll(_ items: [Any]) {
+        beers = items as! [BeerItem]
     }
 }
 
 struct BeerItem {
+    var id: Int?
     var name: String?
     var tagline: String?
+    var beerImage: UIImage?
 }
