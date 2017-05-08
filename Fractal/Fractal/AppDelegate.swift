@@ -13,14 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().tintColor = UIColor.white
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        BeerRouterApp().list(window: window)
+        //There's a way to do this without one single instance?
+        let beerRouter = BeerRouter.sharedInstance
+        beerRouter.list(window: window)
 
         return true
     }
