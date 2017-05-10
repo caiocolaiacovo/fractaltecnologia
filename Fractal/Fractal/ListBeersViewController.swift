@@ -12,23 +12,26 @@ class ListBeersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var listBeersDataSource: ListBeersDataSource?
+    let listBeersDataSource = ListBeersDataSource()
     
     // MARK: View
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        listBeersDataSource = ListBeersDataSource()
-        let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
-        
-        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
-        tableView.tableFooterView = UIView()
+        setupView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.delegate = listBeersDataSource
         tableView.dataSource = listBeersDataSource
         tableView.reloadData()
+    }
+    
+    private func setupView() {
+        self.navigationItem.title = "Beer List"
+        let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        
+        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        tableView.tableFooterView = UIView()
     }
 }

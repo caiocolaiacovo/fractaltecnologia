@@ -20,14 +20,13 @@ class BeerRouter: UINavigationController {
     
     // MARK: - BeerRouter
     
-    func list(window: UIWindow?) {
-        setupNavigationBarStyle()
+    func presentRootScreen() -> UINavigationController {
+        setupNavigationBar()
         
         let listBeersViewController = ListBeersViewController()
+        viewControllers.append(listBeersViewController)
         
-        listBeersViewController.navigationItem.title = "Beer List"
-        self.viewControllers.append(listBeersViewController)
-        window?.rootViewController = self
+        return self
     }
     
     func details(of beerId: Int) {
@@ -47,7 +46,9 @@ class BeerRouter: UINavigationController {
         print("favorited")
     }
     
-    private func setupNavigationBarStyle() {
+    // MARK: - Support methods
+    
+    private func setupNavigationBar() {
         navigationBar.barTintColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0) //#4A90E2
         navigationBar.isTranslucent = false
         navigationBar.setBackgroundImage(UIImage(), for: .default)

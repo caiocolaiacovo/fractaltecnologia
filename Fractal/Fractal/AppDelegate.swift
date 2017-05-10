@@ -19,11 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.rootViewController = BeerRouter.sharedInstance.presentRootScreen()
         
-        //There's a way to do this without one single instance?
-        let beerRouter = BeerRouter.sharedInstance
-        beerRouter.list(window: window)
-
         return true
     }
 
