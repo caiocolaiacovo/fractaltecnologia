@@ -12,8 +12,7 @@
 		91255A751EC002D80032FF35 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91255A741EC002D80032FF35 /* DataSourceProtocol.swift */; };
 		9159959A1EBE0E400067245E /* BeerDetailOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915995991EBE0E400067245E /* BeerDetailOutputPresenter.swift */; };
 		9159959C1EBE10120067245E /* BeerDetailInputPresenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159959B1EBE10120067245E /* BeerDetailInputPresenterApp.swift */; };
-		9159959F1EBE135B0067245E /* BeerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159959E1EBE135B0067245E /* BeerRouter.swift */; };
-		915995A11EBE18920067245E /* ListBeersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915995A01EBE18920067245E /* ListBeersDataSource.swift */; };
+		9159959F1EBE135B0067245E /* BeersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159959E1EBE135B0067245E /* BeersRouter.swift */; };
 		915995A61EBEAC560067245E /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915995A41EBEAC560067245E /* BeerTableViewCell.swift */; };
 		915995A71EBEAC560067245E /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 915995A51EBEAC560067245E /* BeerTableViewCell.xib */; };
 		915995AA1EBEBF7C0067245E /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915995A91EBEBF7C0067245E /* Beer.swift */; };
@@ -58,8 +57,7 @@
 		91255A741EC002D80032FF35 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
 		915995991EBE0E400067245E /* BeerDetailOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailOutputPresenter.swift; sourceTree = "<group>"; };
 		9159959B1EBE10120067245E /* BeerDetailInputPresenterApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailInputPresenterApp.swift; sourceTree = "<group>"; };
-		9159959E1EBE135B0067245E /* BeerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerRouter.swift; sourceTree = "<group>"; };
-		915995A01EBE18920067245E /* ListBeersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBeersDataSource.swift; sourceTree = "<group>"; };
+		9159959E1EBE135B0067245E /* BeersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersRouter.swift; sourceTree = "<group>"; };
 		915995A41EBEAC560067245E /* BeerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
 		915995A51EBEAC560067245E /* BeerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 		915995A91EBEBF7C0067245E /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -144,7 +142,7 @@
 		9159959D1EBE13440067245E /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				9159959E1EBE135B0067245E /* BeerRouter.swift */,
+				9159959E1EBE135B0067245E /* BeersRouter.swift */,
 			);
 			name = Routers;
 			sourceTree = "<group>";
@@ -239,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				915995A41EBEAC560067245E /* BeerTableViewCell.swift */,
-				915995A01EBE18920067245E /* ListBeersDataSource.swift */,
 				9174DF5D1EBD602000B9D512 /* ListBeersViewController.swift */,
 			);
 			name = "View Controllers";
@@ -595,10 +592,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91255A751EC002D80032FF35 /* DataSourceProtocol.swift in Sources */,
-				915995A11EBE18920067245E /* ListBeersDataSource.swift in Sources */,
 				915995AA1EBEBF7C0067245E /* Beer.swift in Sources */,
 				91A3E64D1EC28E44008CB537 /* BeersPresenter.swift in Sources */,
-				9159959F1EBE135B0067245E /* BeerRouter.swift in Sources */,
+				9159959F1EBE135B0067245E /* BeersRouter.swift in Sources */,
 				9159959A1EBE0E400067245E /* BeerDetailOutputPresenter.swift in Sources */,
 				915995A61EBEAC560067245E /* BeerTableViewCell.swift in Sources */,
 				9174DF5F1EBD602000B9D512 /* ListBeersViewController.swift in Sources */,

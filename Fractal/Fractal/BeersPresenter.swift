@@ -9,11 +9,20 @@
 import Foundation
 
 protocol BeersPresenterProtocol {
-    func listAll()
+    //func listAll(_ beers: [BeerItem])
 }
 
 class BeersPresenter: BeersPresenterProtocol {
-    func listAll() {
-        
+    
+    var interactor: ListBeersInteractor!
+    var viewController: ViewControllerProtocol!
+    var router: BeersRouter!
+    var beers: [BeerItem] = []
+    
+    func fetchAllBeers() {
+        interactor.fetchAllBeers()
+        viewController.allBeersData(beers)
     }
+
+    
 }

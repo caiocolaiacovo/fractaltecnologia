@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListBeersViewController" customModule="Fractal" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="41M-se-NMz" id="2Hp-Pa-747"/>
                 <outlet property="tableView" destination="2bW-9T-W9j" id="aSq-VG-9RE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,6 +40,10 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="41M-se-NMz">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -47,7 +52,9 @@
                 <constraint firstItem="2bW-9T-W9j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Erc-99-7A0"/>
                 <constraint firstAttribute="trailing" secondItem="ytb-ny-LyL" secondAttribute="trailing" id="QUU-Ko-lqf"/>
                 <constraint firstItem="2bW-9T-W9j" firstAttribute="top" secondItem="ytb-ny-LyL" secondAttribute="bottom" id="Vv3-vC-oLM"/>
+                <constraint firstItem="41M-se-NMz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iBE-k8-dYT"/>
                 <constraint firstItem="ytb-ny-LyL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ljR-YW-O9T"/>
+                <constraint firstItem="41M-se-NMz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="plK-yA-AF5"/>
                 <constraint firstItem="ytb-ny-LyL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v4C-bG-jzB"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>

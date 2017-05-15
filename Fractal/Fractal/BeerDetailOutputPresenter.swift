@@ -10,7 +10,7 @@ import Foundation
 
 class BeerDetailOutputPresenter {
     func list() {
-        let beerRouter = BeerRouter()
-        beerRouter.backToList()
+        let beerRouter = BeersRouter()
+        //beerRouter.backToList()
     }
 }

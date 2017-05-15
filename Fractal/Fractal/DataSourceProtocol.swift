@@ -12,3 +12,11 @@ import Foundation
     func listAll(_ items: [Any])
     @objc optional func listItem(by id: Int)
 }
+
+protocol Routing {
+    //func presentRootScreen() -> UIView
+}
+
+protocol ViewControllerProtocol {
+    func allBeersData(_ beers: [BeerItem])
+}

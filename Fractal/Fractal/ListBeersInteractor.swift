@@ -10,13 +10,9 @@ import Foundation
 import UIKit
 
 class ListBeersInteractor {
-    var dataSource: DataSourceProtocol?
+    var outputPresenter: BeersPresenter!
     
-    init(to dataSource: DataSourceProtocol) {
-        self.dataSource = dataSource
-    }
-    
-    func listAll() {
+    func fetchAllBeers() {
         //Will be replaced when repository is done
         var beer1 = BeerItem()
         beer1.id = 1
@@ -37,7 +33,7 @@ class ListBeersInteractor {
         beer3.beerImage = UIImage(named: "BeerImageDefault")
         
         let beers = [beer1, beer2, beer3]
-        
-        dataSource?.listAll(beers)
+
+        outputPresenter.beers = beers
     }
 }
