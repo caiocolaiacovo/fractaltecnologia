@@ -18,5 +18,5 @@ protocol Routing {
 }
 
 protocol ViewControllerProtocol {
-    func allBeersData(_ beers: [BeerItem])
+    func dataFetched(_ beers: [BeerItem])
 }

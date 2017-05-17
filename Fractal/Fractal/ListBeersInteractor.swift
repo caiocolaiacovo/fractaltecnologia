@@ -8,32 +8,52 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class ListBeersInteractor {
     var outputPresenter: BeersPresenter!
     
-    func fetchAllBeers() {
-        //Will be replaced when repository is done
-        var beer1 = BeerItem()
-        beer1.id = 1
-        beer1.name = "Beer 1"
-        beer1.tagline = "this is a tagline for beer 1"
-        beer1.beerImage = UIImage(named: "BeerImageDefault")
-        
-        var beer2 = BeerItem()
-        beer2.id = 2
-        beer2.name = "Beer 2"
-        beer2.tagline = "this is a tagline for beer 2"
-        beer2.beerImage = UIImage(named: "BeerImageDefault")
-        
-        var beer3 = BeerItem()
-        beer3.id = 3
-        beer3.name = "Beer 3"
-        beer3.tagline = "this is a tagline for beer 3"
-        beer3.beerImage = UIImage(named: "BeerImageDefault")
-        
-        let beers = [beer1, beer2, beer3]
+    func fetchAllBeers(_ page: Int) {
+        Alamofire.request("https://api.punkapi.com/v2/beers?page=\(page)&per_page=80").responseJSON { response in
 
+            
+        }
+        
+        var beers: [BeerItem] = []
+        if page == 1 {
+            for index in 1...80 {
+                var beer = BeerItem()
+                beer.id = index
+                beer.name = "Beer \(index)"
+                beer.tagline = "this is a tagline for beer \(index)"
+                beer.beerImage = UIImage(named: "BeerImageDefault")
+                
+                beers.append(beer)
+            }
+        }
+        if page == 2 {
+            for index in 81...160 {
+                var beer = BeerItem()
+                beer.id = index
+                beer.name = "Beer \(index)"
+                beer.tagline = "this is a tagline for beer \(index)"
+                beer.beerImage = UIImage(named: "BeerImageDefault")
+                
+                beers.append(beer)
+            }
+        }
+        if page == 3 {
+            for index in 161...240 {
+                var beer = BeerItem()
+                beer.id = index
+                beer.name = "Beer \(index)"
+                beer.tagline = "this is a tagline for beer \(index)"
+                beer.beerImage = UIImage(named: "BeerImageDefault")
+                
+                beers.append(beer)
+            }
+        }
+        
         outputPresenter.beers = beers
     }
 }

@@ -23,6 +23,7 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var presenterInput: BeersPresenter!
     var beers: [BeerItem] = []
+    var page = 1
     
     
     // MARK: - View methods
@@ -33,28 +34,31 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        presenterInput.fetchAllBeers()
+        presenterInput.fetchBeers()
     }
     
     private func setupView() {
         self.navigationItem.title = "Beer List"
-        let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        let nibCell = UINib(nibName: "BeerTableViewCell", bundle: nil)
         
-        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(nibCell, forCellReuseIdentifier: "BeerTableViewCell")
         tableView.tableFooterView = UIView()
-        
-        activityIndicator.startAnimating()
     }
     
-    func allBeersData(_ beers: [BeerItem]) {
+    
+    // MARK: - Data source
+    
+    func dataFetched(_ beers: [BeerItem]) {
         activityIndicator.stopAnimating()
-        
-        self.beers = beers
-        tableView.reloadData()
+
+        if beers.count > 0 {
+            self.beers.append(contentsOf: beers)
+            tableView.reloadData()
+        }
     }
+    
     
     // MARK: - UITableViewDataSource
     
@@ -85,5 +89,11 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0) //#F4F4F4
+
+        print(indexPath.row)
+        
+        if indexPath.row == beers.count - 1 {
+            presenterInput.fetchBeers()
+        }
     }
 }

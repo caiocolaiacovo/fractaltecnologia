@@ -18,10 +18,14 @@ class BeersPresenter: BeersPresenterProtocol {
     var viewController: ViewControllerProtocol!
     var router: BeersRouter!
     var beers: [BeerItem] = []
+    var page = 0
     
-    func fetchAllBeers() {
-        interactor.fetchAllBeers()
-        viewController.allBeersData(beers)
+    func fetchBeers() {
+        page += 1
+        
+        interactor.fetchAllBeers(page)
+        viewController.dataFetched(beers)
+        print("data fetched")
     }
 
     
