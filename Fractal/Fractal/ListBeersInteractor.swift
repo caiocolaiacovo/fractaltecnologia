@@ -7,53 +7,51 @@
 //
 
 import Foundation
-import UIKit
 import Alamofire
 
 class ListBeersInteractor {
     var outputPresenter: BeersPresenter!
     
     func fetchAllBeers(_ page: Int) {
-        Alamofire.request("https://api.punkapi.com/v2/beers?page=\(page)&per_page=80").responseJSON { response in
-
-            
-        }
-        
         var beers: [BeerItem] = []
-        if page == 1 {
-            for index in 1...80 {
-                var beer = BeerItem()
-                beer.id = index
-                beer.name = "Beer \(index)"
-                beer.tagline = "this is a tagline for beer \(index)"
-                beer.beerImage = UIImage(named: "BeerImageDefault")
+        
+        Alamofire.request("https://api.punkapi.com/v2/beers?page=\(page)&per_page=80").responseJSON { response in
+            do {
+                let json = try JSONSerialization.jsonObject(with: response.data!, options: []) as! [Any]
                 
-                beers.append(beer)
+                for (index, item) in json.enumerated() {
+                    if let dic = item as? [String: Any] {
+                        var beer = BeerItem()
+                        beer.id = index
+                        beer.name = dic["name"] as? String
+                        beer.tagline = dic["tagline"] as? String
+                        beer.imageUrl = dic["image_url"] as? String
+                        
+                        beers.append(beer)
+                    }
+                }
+                
+                self.outputPresenter.beersFetched(beers)
+            }
+            catch {
+                print("error")
             }
         }
-        if page == 2 {
-            for index in 81...160 {
-                var beer = BeerItem()
-                beer.id = index
-                beer.name = "Beer \(index)"
-                beer.tagline = "this is a tagline for beer \(index)"
-                beer.beerImage = UIImage(named: "BeerImageDefault")
-                
-                beers.append(beer)
-            }
-        }
-        if page == 3 {
-            for index in 161...240 {
-                var beer = BeerItem()
-                beer.id = index
-                beer.name = "Beer \(index)"
-                beer.tagline = "this is a tagline for beer \(index)"
-                beer.beerImage = UIImage(named: "BeerImageDefault")
-                
-                beers.append(beer)
+    }
+    
+    func fetchImage(from url: String, to cell: AnyObject) {
+        let session = URLSession(configuration: .default)
+        
+        let downloadPicTask = session.dataTask(with: URL(string: url)!) { (data, response, error) in
+            if error != nil {
+                print("Error on fetch image.")
+            } else {
+                if let imageData = data {
+                    self.outputPresenter.imageFetched(imageData, to: cell)
+                }
             }
         }
         
-        outputPresenter.beers = beers
+        downloadPicTask.resume()
     }
 }

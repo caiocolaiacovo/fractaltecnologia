@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 @objc protocol DataSourceProtocol {
     func listAll(_ items: [Any])
@@ -19,4 +20,5 @@ protocol Routing {
 
 protocol ViewControllerProtocol {
     func dataFetched(_ beers: [BeerItem])
+    func imageFetched(with data: Data, to cell: AnyObject)
 }

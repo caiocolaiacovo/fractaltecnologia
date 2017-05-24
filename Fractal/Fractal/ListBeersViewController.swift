@@ -12,7 +12,7 @@ struct BeerItem {
     var id: Int?
     var name: String?
     var tagline: String?
-    var beerImage: UIImage?
+    var imageUrl: String?
 }
 
 class ListBeersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewControllerProtocol {
@@ -20,13 +20,11 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Attributes
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var presenterInput: BeersPresenter!
     var beers: [BeerItem] = []
-    var page = 1
     
     
-    // MARK: - View methods
+    // MARK: - ViewController methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,28 +32,62 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenterInput.fetchBeers()
     }
     
+    
+    // MARK: - View setup
+    
     private func setupView() {
         self.navigationItem.title = "Beer List"
-        let nibCell = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        let cell = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        let footerView = setupTableViewFooterView()
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(nibCell, forCellReuseIdentifier: "BeerTableViewCell")
-        tableView.tableFooterView = UIView()
+        tableView.register(cell, forCellReuseIdentifier: "BeerTableViewCell")
+        tableView.tableFooterView = footerView
+        tableView.tableFooterView?.isHidden = false
+    }
+    
+    private func setupTableViewFooterView() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 74))
+        let fetchDataActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        
+        fetchDataActivityIndicator.isHidden = false
+        fetchDataActivityIndicator.startAnimating()
+        fetchDataActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        footerView.addSubview(fetchDataActivityIndicator)
+        
+        NSLayoutConstraint(item: fetchDataActivityIndicator, attribute: .centerX, relatedBy: .equal, toItem: footerView, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: fetchDataActivityIndicator, attribute: .centerY, relatedBy: .equal, toItem: footerView, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        
+        return footerView
     }
     
     
     // MARK: - Data source
     
     func dataFetched(_ beers: [BeerItem]) {
-        activityIndicator.stopAnimating()
-
         if beers.count > 0 {
             self.beers.append(contentsOf: beers)
+            
+            tableView.tableFooterView?.isHidden = true
             tableView.reloadData()
+        } else {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.tableView.tableFooterView = UIView()
+            })
+        }
+    }
+    
+    func imageFetched(with data: Data, to cell: AnyObject) {
+        if let cell = cell as? BeerTableViewCell {
+            DispatchQueue.main.async {
+                cell.beerImage.image = UIImage(data: data)
+            }
         }
     }
     
@@ -72,7 +104,9 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
         cell.id = beers[indexPath.row].id
         cell.name.text = beers[indexPath.row].name
         cell.tagline.text = beers[indexPath.row].tagline
-        cell.beerImage.image = beers[indexPath.row].beerImage
+        cell.beerImage.image = UIImage(named: "BeerImageDefault")
+        
+        presenterInput.fetchImage(from: beers[indexPath.row].imageUrl!, to: cell)
         
         return cell
     }
@@ -82,7 +116,6 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let beer = beers[indexPath.row]
-//        
 //        beerRouter?.details(of: beer.id!)
         print(indexPath.row)
     }
@@ -90,9 +123,8 @@ class ListBeersViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.96, alpha:1.0) //#F4F4F4
 
-        print(indexPath.row)
-        
         if indexPath.row == beers.count - 1 {
+            tableView.tableFooterView?.isHidden = false
             presenterInput.fetchBeers()
         }
     }

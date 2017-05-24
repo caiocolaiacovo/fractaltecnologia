@@ -17,16 +17,25 @@ class BeersPresenter: BeersPresenterProtocol {
     var interactor: ListBeersInteractor!
     var viewController: ViewControllerProtocol!
     var router: BeersRouter!
-    var beers: [BeerItem] = []
     var page = 0
     
     func fetchBeers() {
         page += 1
         
         interactor.fetchAllBeers(page)
+    }
+    
+    func beersFetched(_ beers: [BeerItem]) {
         viewController.dataFetched(beers)
-        print("data fetched")
     }
 
+    func fetchImage(from url: String?, to cell: AnyObject) {
+        if let _ = url {
+            interactor.fetchImage(from: url!, to: cell)
+        }
+    }
     
+    func imageFetched(_ data: Data, to cell: AnyObject) {
+        viewController.imageFetched(with: data, to: cell)
+    }
 }
